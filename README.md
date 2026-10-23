@@ -16,6 +16,12 @@
 
 GitHub Pages 不提供後端資料庫或伺服器驗證，因此目前購物車與訂單都存放在使用者目前的瀏覽器；不同顧客或裝置的資料不會同步。後台的 `just / just` 是課堂展示登入，不適合保護正式營運資料。若要多人共用正式訂單，需再接上獨立的後端與資料庫。
 
+## 完整技術與架構說明
+
+部署網址：[https://appjust.github.io/menya-haru-order/](https://appjust.github.io/menya-haru-order/)。網站頁面下方的「系統檔案數與大小」區列出目前專案檔案清單與 UTF-8 位元組統計；完整架構、畫面流程、資料儲存界線與技術說明見 [SYSTEM_GUIDE.md](SYSTEM_GUIDE.md)。
+
+主要技術是 HTML5、CSS3、原生 JavaScript、SVG 和瀏覽器 Web Storage。GitHub Pages 只託管靜態檔案；本專案沒有前端框架、打包工具、伺服器程式、資料庫或金流串接。正式多人訂單系統需要另外設計安全的後端與資料庫。
+
 ## 本機預覽
 
 可直接開啟 `index.html`，或在此資料夾執行 `python -m http.server 8000`，再瀏覽 `http://localhost:8000`。
