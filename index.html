@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ee">
+    <meta name="description" content="麵屋小晴線上點餐，挑選拉麵、調整客製選項，到店付款。">
+    <title>麵屋小晴｜把喜歡的拉麵，留給今天</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="site-shell" id="customer-view">
+      <header class="site-header">
+        <a class="brand" href="#home" aria-label="麵屋小晴首頁">
+          <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="麵屋小晴標誌">
+            <path d="M8 26c0-12 10-21 24-21s24 9 24 21v20c0 7-5 12-12 12H20C13 58 8 53 8 46V26Z" fill="#bd4035"/>
+            <path d="M17 27c2-7 8-12 15-12s13 5 15 12" fill="none" stroke="#f9e8bb" stroke-width="3" stroke-linecap="round"/>
+            <path d="M20 30h24" stroke="#f9e8bb" stroke-width="3" stroke-linecap="round"/>
+            <path d="M23 36c5-4 13-4 18 0" fill="none" stroke="#f9e8bb" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="25" cy="25" r="2.5" fill="#f9e8bb"/><circle cx="39" cy="25" r="2.5" fill="#f9e8bb"/>
+          </svg>
+          <span class="brand-copy"><strong>麵屋小晴</strong><small>MENYA HARU · 拉麵食堂</small></span>
+        </a>
+        <nav class="main-nav" aria-label="主選單">
+          <a href="#menu">今日菜單</a>
+          <a href="#about">關於小晴</a>
+          <a class="admin-link" href="#admin">店家後台 <span aria-hidden="true">↗</span></a>
+        </nav>
+        <button class="cart-trigger" id="open-cart" type="button" aria-label="開啟購物車">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 11.1a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg>
+          <span class="cart-label">購物車</span><span class="cart-count" id="cart-count">0</span>
+        </button>
+      </header>
+
+      <main id="home">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> 麵屋小晴 · 每日熬湯</div>
+            <h1 id="hero-title">把喜歡的拉麵，<br><em>留給今天。</em></h1>
+            <p>一碗好湯，從慢慢熬開始。選一份熱騰騰的心意，調成你最喜歡的樣子。</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#menu">開始點餐 <span aria-hidden="true">↓</span></a>
+              <span class="hero-note"><span class="sun-icon">✳</span> 現點現煮 · 到店付款</span>
+            </div>
+            <div class="hero-stats"><span><b>9</b> 道手作拉麵</span><i></i><span><b>3</b> 種風味分區</span><i></i><span>今天也有好湯</span></div>
+          </div>
+          <div class="hero-visual" aria-label="一碗豚骨拉麵插畫">
+            <div class="hero-sticker sticker-top">小晴推薦 <span>♥</span></div>
+            <div class="hero-sun"></div>
+            <svg class="hero-bowl" viewBox="0 0 520 410" role="img" aria-label="溫暖的豚骨拉麵">
+              <ellipse cx="260" cy="354" rx="180" ry="23" fill="#b1c8b6" opacity=".45"/>
+              <path d="M105 167c7-59 74-104 155-104s148 45 155 104" fill="none" stroke="#d48248" stroke-width="9" stroke-linecap="round" opacity=".75"/>
+              <path d="M160 116c-16-26 13-33 1-54m91 52c-13-29 16-35 3-58m91 60c-15-25 15-35 2-55" fill="none" stroke="#fffaf0" stroke-width="7" stroke-linecap="round"/>
+              <ellipse cx="260" cy="184" rx="187" ry="61" fill="#f8e8c6" stroke="#322e2a" stroke-width="7"/>
+              <ellipse cx="260" cy="185" rx="165" ry="43" fill="#cf7850"/>
+              <path d="M80 190c10 105 73 166 180 166s170-61 180-166c-45 28-106 43-180 43S125 218 80 190Z" fill="#bd4035" stroke="#322e2a" stroke-width="7"/>
+              <path d="M130 246c50 31 210 31 260 0" fill="none" stroke="#e6a15e" stroke-width="9" opacity=".78"/>
+              <ellipse cx="260" cy="356" rx="74" ry="10" fill="#f8e8c6" stroke="#322e2a" stroke-width="6"/>
+              <path d="M218 160c22-22 44 20 67-2s38 21 62 1" fill="none" stroke="#f3d57b" stroke-width="8" stroke-linecap="round"/>
+              <path d="M200 181c21-22 42 20 65-2s38 21 60 2" fill="none" stroke="#f3d57b" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="176" cy="165" r="22" fill="#f1d78f" stroke="#f7ede0" stroke-width="5"/><circle cx="176" cy="165" r="10" fill="#e68e48"/>
+              <path d="M304 135c23-21 50-6 56 14 4 14-6 23-23 24-24 0-39-17-33-38Z" fill="#ebdfbd" stroke="#f8eee0" stroke-width="5"/>
+              <path d="M329 138c8 2 12 7 13 13" fill="none" stroke="#b65943" stroke-width="4" stroke-linecap="round"/>
+              <path d="M365 173 397 135l10 7-22 52" fill="#315a49" stroke="#f7ede0" stroke-width="4"/>
+              <path d="M127 188c-16-5-24-18-20-31 15 0 27 9 28 21 9-16 22-20 36-14-5 16-19 27-34 25" fill="#7d9c61" stroke="#f7ede0" stroke-width="4"/>
+              <circle cx="250" cy="152" r="7" fill="#fff3cd"/><circle cx="274" cy="173" r="6" fill="#fff3cd"/><circle cx="225" cy="187" r="5" fill="#fff3cd"/>
+            </svg>
+            <div class="hero-sticker sticker-bottom"><span class="sticker-spark">✳</span><span>豚骨慢火熬煮<br><b>濃而不膩，剛剛好</b></span></div>
+            <span class="visual-caption">一碗小晴的日常 <span>—</span> 01 / 03</span>
+          </div>
+          <div class="hero-side-note" aria-hidden="true">SOUP · NOODLE · HEART</div>
+        </section>
+
+        <section class="promise-strip" aria-label="餐點特色">
+          <div><span class="promise-icon">湯</span><span><b>每日慢熬</b><small>用時間煮出層次</small></span></div>
+          <div><span class="promise-icon promise-icon-cream">麵</span><span><b>麵條現煮</b><small>軟硬度照你的喜好</small></span></div>
+          <div><span class="promise-icon promise-icon-sage">心</span><span><b>客製加料</b><small>加一顆溏心蛋更滿足</small></span></div>
+          <div><span class="promise-icon promise-icon-sun">晴</span><span><b>到店付款</b><small>送單成功再到店取餐</small></span></div>
+        </section>
+
+        <section class="menu-section" id="menu" aria-labelledby="menu-title">
+          <div class="section-heading">
+            <div><span class="section-kicker">MENU · 2026</span><h2 id="menu-title">今天想吃哪一碗？</h2><p>每一碗都能調整麵條硬度，也能加一顆溏心蛋。</p></div>
+            <div class="menu-side-note"><span>09</span><small>手作<br>菜單</small></div>
+          </div>
+          <div class="menu-controls">
+            <div class="category-tabs" id="category-tabs" role="group" aria-label="依拉麵類別篩選"></div>
+            <span class="menu-count" id="menu-count"></span>
+          </div>
+          <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+          <div class="menu-footnote"><span class="footnote-flower">✿</span> 現點現煮，請預留一點等待好湯的時間。</div>
+        </section>
+
+        <section class="about-section" id="about">
+          <div class="about-seal" aria-hidden="true"><span>HARU</span><b>晴</b><small>一口熱湯<br>一日好心情</small></div>
+          <div class="about-copy"><span class="section-kicker">A LITTLE STORY</span><h2>今天的晴天，<br>從一碗拉麵開始。</h2><p>麵屋小晴相信，平凡日子也值得好好吃飯。每天熬一鍋湯、煮一把麵，把你喜歡的味道，準備得剛剛好。</p><a href="#menu" class="text-link">看看今日菜單 <span>→</span></a></div>
+          <div class="about-stamp">慢火<br><span>好湯</span></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="footer-brand" href="#home"><span class="footer-mark">晴</span><span><b>麵屋小晴</b><small>MENYA HARU</small></span></a>
+        <p>把喜歡的拉麵，留給今天。</p>
+        <div class="footer-meta"><span>© 麵屋小晴 · 線上訂餐示範</span><span class="signature">資通系 李振偉老師</span></div>
+      </footer>
+    </div>
+
+    <main class="admin-view" id="admin-view" hidden>
+      <header class="admin-topbar"><a class="brand" href="#home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 26c0-12 10-21 24-21s24 9 24 21v20c0 7-5 12-12 12H20C13 58 8 53 8 46V26Z" fill="#bd4035"/><path d="M17 27c2-7 8-12 15-12s13 5 15 12M20 30h24" fill="none" stroke="#f9e8bb" stroke-width="3" stroke-linecap="round"/></svg><span class="brand-copy"><strong>麵屋小晴</strong><small>店家管理中心</small></span></a><div class="admin-top-actions"><a href="#home" class="back-to-shop">← 回到點餐頁</a><button id="admin-logout" class="button button-small button-outline" type="button" hidden>登出</button></div></header>
+      <section class="admin-wrap">
+        <div class="admin-heading"><div><span class="section-kicker">SHOP MANAGER · DEMO</span><h1>訂單管理</h1><p>掌握每一份新鮮送來的心意。</p></div><span class="live-indicator"><i></i> 本機示範模式</span></div>
+        <section class="login-card" id="admin-login-card" aria-labelledby="login-title">
+          <div class="login-mark">晴</div><div class="login-copy"><h2 id="login-title">歡迎回來，小晴</h2><p>登入後即可查看並更新訂單狀態。</p><div class="login-hint">示範帳號 <b>just</b><span>／</span> 密碼 <b>just</b></div></div>
+          <form id="login-form" class="login-form"><label>帳號<input name="username" autocomplete="username" required placeholder="輸入店家帳號"></label><label>密碼<input name="password" type="password" autocomplete="current-password" required placeholder="輸入登入密碼"></label><p class="form-error" id="login-error" role="alert" hidden></p><button class="button button-primary" type="submit">登入後台 <span>→</span></button></form>
+        </section>
+        <div class="admin-dashboard" id="admin-dashboard" hidden>
+          <div class="stat-grid"><article class="stat-card stat-card-dark"><span>累計訂單</span><b id="stat-count">0</b><small>份顧客訂單</small><i>01</i></article><article class="stat-card"><span>訂單總金額</span><b id="stat-total">NT$ 0</b><small>所有訂單金額</small><i>02</i></article><article class="stat-card stat-card-green"><span>已完成營業額</span><b id="stat-completed">NT$ 0</b><small>已完成訂單合計</small><i>03</i></article></div>
+          <section class="orders-panel"><div class="orders-heading"><div><span class="section-kicker">ORDER BOARD</span><h2>最新訂單 <span id="orders-count-label">0</span></h2></div><div class="orders-tools"><label class="filter-label" for="status-filter">狀態</label><select id="status-filter"><option value="全部">全部訂單</option><option value="製作中">製作中</option><option value="可取餐">可取餐</option><option value="已完成">已完成</option></select><button class="button button-small button-outline" id="refresh-orders" type="button">↻ 更新訂單</button></div></div><div class="orders-list" id="orders-list"></div></section>
+          <p class="demo-notice"><span>ⓘ</span> GitHub Pages 為靜態網站；目前訂單存在這個瀏覽器，僅供課堂示範，不會在不同裝置間同步。<a href="https://pages.github.com/" target="_blank" rel="noreferrer">了解 Pages</a></p>
+        </div>
+      </section>
+      <footer class="admin-footer"><a href="#home">麵屋小晴</a><span>訂單管理示範</span><span class="signature">資通系 李振偉老師</span></footer>
+    </main>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-modal="true" role="dialog" hidden>
+      <div class="drawer-header"><div><span class="section-kicker">YOUR ORDER</span><h2 id="cart-title">購物車 <span id="drawer-cart-count">0</span></h2></div><button class="icon-button" data-close-cart type="button" aria-label="關閉購物車">×</button></div>
+      <section class="cart-view" id="cart-view"><div class="cart-items" id="cart-items"></div><div class="drawer-footer"><div class="subtotal-row"><span>小計</span><b id="cart-total">NT$ 0</b></div><p class="payment-note"><span>✓</span> 到店付款 · 不收取線上款項</p><button class="button button-primary button-wide" id="checkout-open" type="button">前往填寫訂單 <span>→</span></button><button class="continue-link" data-close-cart type="button">繼續挑選餐點</button></div></section>
+      <form class="checkout-view" id="checkout-form" hidden>
+        <button class="checkout-back" id="checkout-back" type="button">← 返回購物車</button><h3>最後一步，準備取餐。</h3><p>填寫聯絡資料，我們就開始準備這份好湯。</p>
+        <label>取餐人姓名<input name="name" maxlength="40" autocomplete="name" required placeholder="請填寫姓名"></label>
+        <label>手機號碼<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" pattern="09[0-9]{8}" maxlength="10" required placeholder="09xxxxxxxx"><small>請填寫 09 開頭的 10 位手機號碼。</small></label>
+        <label>預計取餐時間<input name="pickup" id="pickup-time" type="datetime-local" required><small>請選擇 10 分鐘後至 7 天內的時間。</small></label>
+        <div class="checkout-total"><span>本次訂單金額</span><b id="checkout-total">NT$ 0</b></div><div class="payment-confirm"><span>付款方式</span><b>到店付款</b></div>
+        <p class="form-error" id="checkout-error" role="alert" hidden></p><button class="button button-primary button-wide" type="submit">送出訂單 <span>→</span></button>
+      </form>
+    </aside>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden></div>
+    <section class="product-modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden></section>
+    <section class="success-modal" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title" hidden><button class="icon-button success-close" data-close-success type="button" aria-label="關閉">×</button><span class="success-check">✓</span><span class="section-kicker">ORDER RECEIVED</span><h2 id="success-title">訂單已送出！</h2><p>我們正在為你準備一碗好湯。</p><div class="success-number"><small>訂單編號</small><b id="success-order-id"></b></div><div class="success-detail"><span>取餐時間</span><b id="success-pickup"></b></div><div class="success-detail"><span>付款方式</span><b>到店付款</b></div><button class="button button-primary button-wide" data-close-success type="button">好，知道了</button></section>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
